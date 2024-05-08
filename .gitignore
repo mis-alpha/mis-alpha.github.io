@@ -1,0 +1,37 @@
+# Ignore all .env files
+*.env
+
+# Ignore specific .env in a directory
+component/.env
+
+# Ignore node modules
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore all .bin files
+*.bin
+
+# Ignore build output directory
+/build/
+
+# Ignore files created by macOS
+.DS_Store
+
+# Ignore thumbnail cache files used on Windows
+Thumbs.db
+
+# Ignore user-specific project settings for Visual Studio Code
+.vscode/
+
+# Ignore Python virtual environments
+venv/
+.env/
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore package lock files (you might want to track these in some projects)
+package-lock.json
+yarn.lock
