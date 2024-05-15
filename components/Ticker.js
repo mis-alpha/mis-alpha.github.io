@@ -7,11 +7,13 @@ const RollingBanner = ({ bannerStyle, textStyle }) => {
   const screenWidth = Dimensions.get('window').width;
 
   useEffect(() => {
+    debugger
     const fetchData = async () => {
-     const url = 'http://192.168.45.55:3000/api/crypto';
+     const url = 'http://localhost:3000/api/crypto';
      try {
        const response = await fetch(url);
        const data = await response.json();
+       debugger
        const processedData = data.map(item => ({
          symbol: item.symbol,
          price: item.price // Ensure your server sends price directly formatted
