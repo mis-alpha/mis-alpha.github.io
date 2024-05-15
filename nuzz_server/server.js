@@ -11,7 +11,7 @@ const cacheDuration = 60000; // 60 seconds cache duration
 app.use(cors());
 
 app.get('/api/crypto', async (req, res) => {
-    const ids = '1,217,3908,74,1839,52,11419,5994,24478'
+    const ids = '1,1027,5426,74,1839,52,11419,5994,24478'
     if (cache.data && (Date.now() - cache.timestamp < cacheDuration)) {
       return res.json(cache.data); // Send cached data if still valid
     }
@@ -34,6 +34,25 @@ app.get('/api/crypto', async (req, res) => {
   }
 });
 
+app.get('/api/decrypt', async (req, res) => {
+  const options = {
+    method: 'GET',
+    url: 'https://cryptocurrency-news2.p.rapidapi.com/v1/decrypt',
+    headers: {
+      'X-RapidAPI-Key': '6b48328b42mshdd1ed327214c9d3p173071jsnac6e2b3a3de8',
+      'X-RapidAPI-Host': 'cryptocurrency-news2.p.rapidapi.com'
+    }
+  };
+  
+  try {
+    const response = await axios.request(options);
+    console.log(response.data);
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+})
+
 app.listen(port, () => {
-  console.log(`Server running on apfhdapfewlkjrqlkjer:${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });

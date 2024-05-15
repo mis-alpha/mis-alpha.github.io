@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Linking } from 'react-native';
 
 const ArticleItem = ({ time, title, source }) => {
   return (
@@ -9,7 +9,10 @@ const ArticleItem = ({ time, title, source }) => {
     </View>
       <View style={styles.details}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.source}>{source}</Text>
+        <Text style={{color: 'blue'}}
+              onPress={() => Linking.openURL(source)}>
+          decrypt.co
+        </Text>
       </View>
     </View>
   );
